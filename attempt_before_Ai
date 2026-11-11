@@ -1,0 +1,24 @@
+The dataset contains information about the prices of different everyday items across two cities over a period of time. It has 97 rows and 6 columns, including data, item, city, price and unit. Before examining the dataset I will try to identify anything that seems incorrect inconsistent and incomplete
+Problem 1: Missing price values
+Code used: df.isnull().sum()
+What I found: There is one missing value in the price column.
+Planned decision: Investigate before correcting.
+Reason: I don’t want to fill in a missing price with a random number. I would first check whether the correct price can be identified.
+Evidence:
+ROW INDEX 5
+
+Problem 2: Duplicate entries
+Code used: df.duplicated().sum()
+What I found: There is one completely duplicated row in the dataset.
+Planned decision: Exclude the extra duplicate after checking it.
+Reason: Keeping the same observation twice could affect the results and calculations.
+Evidence:
+The duplicate appears at row indexes 8 and 96
+
+Problem 3: Inconsistent item names
+Code used: df["item"].unique()
+What I found: The item “Oil B” also appears as “oil b” in lowercase.
+Planned decision: Correct the inconsistent spelling.
+Reason: Both labels appear to refer to the same item, so keeping them separate could cause problems when analysing the data.
+Evidence:
+notice that oil b and oil B have different capitalization 
